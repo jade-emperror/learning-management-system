@@ -29,10 +29,9 @@ if __name__ == '__main__':
         print(key,'\n'+'*'*20)
         for i in d:
             for j in i:
-                print(j['pagemap'])
+                print(j['title'])
                 print(j['link'])
                 print(j['snippet'])
                 print('\n'*1)
                 break
             break
-

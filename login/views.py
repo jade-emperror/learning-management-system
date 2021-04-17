@@ -10,22 +10,19 @@ def cklogin(request):
     if request.method == 'POST':
         uid=request.POST.get('uid').lower()
         pwd=request.POST.get('pwd')
-        print(uid,uid[2:],uid[2:]=='vh')
         if uid[:2]=='vh':
             data=Student.objects.filter(uid=uid).values('uid','password')
-            print(data)    
             if(len(data)!=0):
-                print(data)
                 data=data[0]
-                print(data)
                 if(data['uid']==uid and data['password'] == pwd):
-                    return HttpResponse("loggedin")
+                    
+                    return redirect("dashboard")
                 else:
-                    return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
-                    #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                    return render(request,'login.html',{'script':"Invalid Username or password"})
+                    #return redirect(login#,{'script':"<span class="error">Invalid Username or password</span>"})
             else:
-                return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"}) 
-                #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                return render(request,'login.html',{'script':"Invalid Username or password"}) 
+                #return redirect(login#,{'script':"<span class="error">Invalid Username or password</span>"})
         elif uid[:3]=='hts':
             data=Faculty.objects.filter(uid=uid).values('uid','password')
             if(len(data)!=0):
@@ -33,13 +30,13 @@ def cklogin(request):
                 if(data['uid']==uid and data['password'] == pwd):
                     return HttpResponse("loggedin")
                 else:
-                    return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
-                    #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                    return render(request,'login.html',{'script':"Invalid Username or password"})
+                    #return redirect(login#,{'script':"<span class="error">Invalid Username or password</span>"})
             else: 
-                return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
-                #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                return render(request,'login.html',{'script':"Invalid Username or password"})
+                #return redirect(login#,{'script':"<span class="error">Invalid Username or password</span>"})
         else:
-            return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
+            return render(request,'login.html',{'script':"Invalid Username or password"})
             #return redirect(login)
     else:
         return HttpResponse("fucked up for sure")

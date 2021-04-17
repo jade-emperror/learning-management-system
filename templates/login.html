@@ -1,20 +1,28 @@
-<!DOCTYPE html>
+<!DOCTYPE html> {% load static%}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Roboto&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
     <title>Login</title>
 </head>
 
 <body>
-    <form action="login" method="POST">
-        {%csrf_token%}
-        <input type="text" name="uid" id="uid" placeholder="username">
-        <input type="password" name="pwd" id="pwd" placeholder="password">
-        <input type="submit" value="login">
-    </form>
+    <div class="whole-cont">
+        <div class="form-cont">
+            <span class="login-hdr">Explore the lms</span>
+            <form action="login" class="login-form" method="POST">
+                {% csrf_token %}
+                <input class="uname box" type="text" autocomplete="off" name="uid" id="uid" placeholder="username">
+                <input class="pwd box" type="password" name="pwd" id="pwd" placeholder="password">
+                <span class="error">{{script}}</span>
+                <input class="sub-btn" type="submit" value="login">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
