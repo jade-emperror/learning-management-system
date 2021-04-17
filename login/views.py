@@ -22,10 +22,10 @@ def cklogin(request):
                     return HttpResponse("loggedin")
                 else:
                     return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
-                    #return redirect(login,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                    #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
             else:
                 return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"}) 
-                #return redirect(login,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
         elif uid[:3]=='hts':
             data=Faculty.objects.filter(uid=uid).values('uid','password')
             if(len(data)!=0):
@@ -34,10 +34,10 @@ def cklogin(request):
                     return HttpResponse("loggedin")
                 else:
                     return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
-                    #return redirect(login,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                    #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
             else: 
                 return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
-                #return redirect(login,{'script':"<script>alert(\"wrong username or password\")</script>"})
+                #return redirect(login#,{'script':"<script>alert(\"wrong username or password\")</script>"})
         else:
             return render(request,'login.html',{'script':"<script>alert(\"wrong username or password\")</script>"})
             #return redirect(login)
