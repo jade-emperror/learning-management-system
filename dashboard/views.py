@@ -11,7 +11,10 @@ def checklogin(request):
         return False
 def index(request):
     if checklogin(request):
-        return render(request,'dashboard.html')
+        if(request.session.get('role')=='student'):
+            return render(request,'dashboard-student.html')
+        else:
+            return render(request,'dashboard-faculty.html')
     else:
         return redirect("/login/")
 def SyllabusFeed(request):

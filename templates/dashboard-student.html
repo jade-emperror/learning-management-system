@@ -1,0 +1,98 @@
+<!DOCTYPE html>{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Roboto&amp;display=swap" rel="stylesheet">
+    <!--<link rel="stylesheet" href="/css/dashboard.css">-->
+
+    <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+    <title>Dashboard-LMS</title>
+</head>
+
+<body>
+    <section class="topbar">
+        <h1 class="lms-hdr">LMS</h1>
+        <div class="searchbar-cont">
+            <div class="container h-100">
+                <div class="d-flex justify-content-center h-100">
+                    <form action="" class="searchbar">
+                        <input class="search_input" type="text" autocomplete="off" name="searchq" placeholder="Search...">
+                        <button type="submit" class="search_icon"><img class="icon" src="{% static '/images/search.svg' %}"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <a href="" class="tab-links">Shop</a>
+            <a href="" class="tab-links">Result</a>
+            <a href="" class="tab-links">Course</a>
+            <!--<a href="" class="tab-links">Settings <img src="/images/down-arrow.png" class="arrow-icon"></a>
+            -->
+            <div class="dropdown">
+                <button class="dropbtn">Settings</button>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Attendance</a>
+                    <a href="clearses/">Log Out</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <h1>dashboard</h1>
+    <a href="clearses/">clear session</a>
+    <a href="subjectfeed/">subject</a>
+    <a href="syllabusfeed/">syllabus</a>-->
+    <section class="quicklinks">
+        <div class="quick-hdr-cont">
+            <div class="quick-inr-hdr-cont">
+                <h2 class="quick-hdr">Quick Links</h2>
+            </div>
+        </div>
+        <div class="quickies-cont">
+            <div class="quickies">
+                <div class="quick-tab">
+                    <a href="" class="quick-link">My Class +</a>
+                </div>
+            </div>
+            <div class="quickies">
+                <div class="quick-tab">
+                    <a href="" class="quick-link">Assignments +</a>
+                </div>
+            </div>
+            <div class="quickies">
+                <div class="quick-tab">
+                    <a href="" class="quick-link">Time Table +</a>
+                </div>
+            </div>
+            <div class="quickies">
+                <div class="quick-tab">
+                    <a href="" class="quick-link">Events +</a>
+                </div>
+            </div>
+            <div class="quickies">
+                <div class="quick-tab">
+                    <a href="" class="quick-link">GPA/CGPA Calculator +</a>
+                </div>
+            </div>
+            <div class="quickies">
+                <div class="quick-tab">
+                    <a href="" class="quick-link">Complaints +</a>
+                </div>
+            </div>
+            <div class="quickies">
+                <div class="quick-tab">
+                    <a href="" class="quick-link">Feed Back +</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

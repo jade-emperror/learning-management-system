@@ -1,0 +1,249 @@
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Manrope', sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+.topbar {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;
+    align-items: center;
+    height: 12vh;
+    flex-direction: row;
+    background-color: rgb(240, 240, 240);
+}
+
+.lms-hdr {
+    height: fit-content;
+    flex: .17;
+    padding-left: 8vw;
+    font-size: 3vw;
+    letter-spacing: .3vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.searchbar-cont {
+    flex: .4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: fit-content;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 27vw;
+    font-size: 2vh;
+    line-height: 4.5vh;
+    caret-color: red;
+    padding-left: 2vw;
+    letter-spacing: 0.09vw;
+}
+
+.search_input::placeholder {
+    color: #b3b8c4;
+    font-size: 2vh;
+    line-height: 4.5vh;
+    letter-spacing: .1vw;
+}
+
+.search_icon {
+    height: 4.5vh;
+    width: 4.5vh;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: black;
+    text-decoration: none;
+    background: white;
+}
+
+.search_icon:hover {
+    transform: scale(1.15);
+    transition: .15s;
+    cursor: pointer;
+}
+
+.icon {
+    height: 2.5vh;
+    width: 2.5vh;
+}
+
+.tabs {
+    flex: .4;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tab-links {
+    width: fit-content;
+    padding-right: 1vw;
+    font-size: 2.5vh;
+    line-height: 2vh;
+    text-decoration: none;
+    letter-spacing: .1vw;
+    color: rgb(2, 38, 73);
+    border-bottom: solid .7vh rgb(2, 38, 73);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.arrow-icon {
+    height: 1.7vh;
+    width: 1.7vh;
+    margin-bottom: -.3vw;
+    margin-left: .3vw;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    margin-left: -35px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
+/*
+.tab-links:hover {
+    padding-right: 1.2vw;
+    transition: .2s linear;
+    overflow: unset;
+}
+*/
+
+.quicklinks {
+    margin-top: -1vh;
+    width: 100%;
+}
+
+.quick-hdr-cont {
+    width: 100%;
+    background-color: rgb(126, 236, 236);
+    height: fit-content;
+}
+
+.quick-inr-hdr-cont {
+    width: 80%;
+    margin: auto;
+}
+
+.quick-hdr {
+    padding-top: .15vh;
+    padding-bottom: .15vh;
+    text-align: center;
+}
+
+
+/* quick tabs*/
+
+.quickies-cont {
+    width: 75vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.quick-link {
+    text-decoration: none;
+    color: rgb(2, 38, 73);
+    font-size: 1.1rem;
+}
+
+.quick-tab {
+    padding: 1.7vh 1.2vw;
+    border-radius: 2vw;
+    background-color: #bfcce7;
+}
+
+.quick-tab:hover {
+    transform: scale(1.15);
+    transition: .1s;
+    background-color: #97addd;
+}
+
+.quickies:hover {
+    cursor: pointer;
+}
+
+.lms-hdr:hover {
+    cursor: pointer;
+}

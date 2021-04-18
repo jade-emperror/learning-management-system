@@ -105,3 +105,12 @@
         border: .5vh solid orange;
         /* oranges! yey */
     }
+    
+    .error {
+        font-size: 1vw;
+        font-weight: 600;
+        letter-spacing: .1vw;
+        color: rgb(255, 41, 41);
+        margin-top: 1.5vh;
+        margin-bottom: -1vh;
+    }

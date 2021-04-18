@@ -16,6 +16,7 @@ def cklogin(request):
                 data=data[0]
                 if(data['uid']==uid and data['password'] == pwd):
                     request.session['islogin']=True
+                    request.session['role']='student'
                     #return redirect("/dashboard/")
                     return redirect("/dashboard/")
                 else:
@@ -29,6 +30,8 @@ def cklogin(request):
             if(len(data)!=0):
                 data=data[0]
                 if(data['uid']==uid and data['password'] == pwd):
+                    request.session['islogin']=True
+                    request.session['role']='faculty'
                     return redirect("/dashboard/")
                 else:
                     return render(request,'login.html',{'script':"Invalid Username or password"})
