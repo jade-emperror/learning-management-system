@@ -15,11 +15,12 @@ def cklogin(request):
             if(len(data)!=0):
                 data=data[0]
                 if(data['uid']==uid and data['password'] == pwd):
-                    
-                    return redirect("dashboard")
+                    request.session['islogin']=True
+                    #return redirect("/dashboard/")
+                    return redirect("/dashboard/")
                 else:
                     return render(request,'login.html',{'script':"Invalid Username or password"})
-                    #return redirect(login#,{'script':"<span class="error">Invalid Username or password</span>"})
+                    #return redirect('',{'script':"Invalid Username or password"})
             else:
                 return render(request,'login.html',{'script':"Invalid Username or password"}) 
                 #return redirect(login#,{'script':"<span class="error">Invalid Username or password</span>"})
@@ -28,7 +29,7 @@ def cklogin(request):
             if(len(data)!=0):
                 data=data[0]
                 if(data['uid']==uid and data['password'] == pwd):
-                    return HttpResponse("loggedin")
+                    return redirect("/dashboard/")
                 else:
                     return render(request,'login.html',{'script':"Invalid Username or password"})
                     #return redirect(login#,{'script':"<span class="error">Invalid Username or password</span>"})

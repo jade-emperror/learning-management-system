@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update subject</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" id="subcode" placeholder="subject code" name="subcode" maxlength="9">
+        <input type="text" id="subject" placeholder="subject" name="subject" maxlength="50">
+        <select name="dept" id="dept">
+        <option value="IT">IT</option>
+        <option value="CSE">CSE</option>
+        <option value="BT">BT</option>
+        <option value="EEE">EEE</option>
+        <option value="ECE">ECE</option>
+        <option value="CHEM">CHEM</option>
+        <option value="AERO">AERO</option>
+    </select>
+        <input type="submit" value="add subject">
+    </form>
+</body>
+
+</html>
