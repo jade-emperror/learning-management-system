@@ -18,7 +18,8 @@
         <div class="searchbar-cont">
             <div class="container h-100">
                 <div class="d-flex justify-content-center h-100">
-                    <form action="" class="searchbar">
+                    <form action="search/" method="POST" class="searchbar">
+                        {% csrf_token %}
                         <input class="search_input" type="text" autocomplete="off" name="searchq" placeholder="Search...">
                         <button type="submit" class="search_icon"><img class="icon" src="{% static '/images/search.svg' %}"></button>
                     </form>
@@ -26,8 +27,8 @@
             </div>
         </div>
         <div class="tabs">
-            <a href="" class="tab-links">Shop</a>
-            <a href="" class="tab-links">Result</a>
+            <a href="/shop/" class="tab-links">Shop</a>
+            <a href="https://coe1.annauniv.edu/home/" class="tab-links">Result</a>
             <a href="" class="tab-links">Course</a>
             <!--<a href="" class="tab-links">Settings <img src="/images/down-arrow.png" class="arrow-icon"></a>
             -->
@@ -37,7 +38,7 @@
                     <a href="#">Profile</a>
                     <a href="#">Feedback</a>
                     <a href="#">Attendance</a>
-                    <a href="clearses/">Log Out</a>
+                    <a href="logout/">Log Out</a>
 
                 </div>
             </div>
@@ -77,7 +78,7 @@
             </div>
             <div class="quickies">
                 <div class="quick-tab">
-                    <a href="" class="quick-link">GPA/CGPA Calculator +</a>
+                    <a href="http://techietet.com/gpa/" class="quick-link">GPA/CGPA Calculator +</a>
                 </div>
             </div>
             <div class="quickies">

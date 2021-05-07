@@ -10,7 +10,7 @@
     }
     
     .whole-cont {
-        background: url('/images/login-bg.jpg');
+        background: url('/static/images/login-bg.jpg');
         background-size: cover;
         position: absolute;
         width: 100%;
