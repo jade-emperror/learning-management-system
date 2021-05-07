@@ -1,0 +1,42 @@
+{%csrf_token%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {%csrf_token%}
+    <form action="markpresent" method="GET">
+        <input type="submit" value="markpresent">
+    </form>
+    <br><br>
+    <form action="present" method="POST">
+        {%csrf_token%}
+        <label>course</label><input type="text" name="course"><br><br>
+        {%for i in a%}
+        <label>{{i.uid}}</label>
+        <input type="checkbox" name="{{i.uid}}_present"><br>
+        {%endfor%}
+        <input type="submit" value="submit">
+    </form>
+    <br><br>
+    <form action="studdetail" method="POST">
+        <label>uid</label> <input type="text" name="uid" /><br /><br />
+        <label>department</label> <input type="text" name="dept" /><br /><br />
+        <label>batch</label> <input type="text" name="batch" /><br /><br />
+        <label>subjectcode</label> <input type="text" name="scode" /><br /><br />
+        <label>staff</label> <input type="text" name="staff" /><br /><br />
+        <label>total hr</label>
+        <input type="number" name="totalhrs" />
+        <label>sem</label>
+        <input type="number" name="sem" />
+        <br /><br /><br />
+        <input type="submit" value="submit" />
+        {%csrf_token%}
+        <b>{{pass1}}</b>
+</body>
+</html>

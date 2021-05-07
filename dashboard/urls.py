@@ -4,5 +4,7 @@ urlpatterns = [
     path('',index,name='index'),
     path('syllabusfeed/',SyllabusFeed,name='syllabusfeed'),
     path('subjectfeed/',SubjectFeed,name='syllabusfeed'),
-    path('clearses/',clearses,name='syllabusfeed'),
+    path('logout/',clearses,name='syllabusfeed'),
+    path('search/',search,name='syllabusfeed'),
+    path('profile/',profile,name='syllabusfeed'),
 ]
