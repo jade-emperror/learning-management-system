@@ -9,7 +9,188 @@
 </head>
 
 <body>
+    <section class="sec1">
+        <section class="profile-cont">
+            <div class="profile-img-cont">
+                <img src="/images/man.png" alt="" class="profile-img">
+            </div>
+            <div class="profile-desc-cont">
+                <h1 class="prof-hdr">About</h1>
+                <span class="profile-labels">Name: <span class="answer">Bharath Kumar</span></span>
+                <span class="profile-labels">Dept: <span class="answer">IT</span></span>
+                <span class="profile-labels">Ph-no: <span class="answer">6382397798</span></span>
+                <span class="profile-labels">e-mail id: <span class="answer">maestrobharath@gmail.com</span></span>
 
+            </div>
+        </section>
+        <section class="lins">
+            <h1 class="prof-hdr">Courses</h1>
+            <div class="link-cont">
+                <ul>
+                    <li><a href="" class="links">object oriented programing</a></li>
+                    <li><a href="" class="links">data structure</a></li>
+                    <li><a href="" class="links">discreete mathemetics</a></li>
+                    <li><a href="" class="links">digital systems and principle design</a></li>
+                    <li><a href="" class="links">Analog and Digital Communication</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="lins">
+            <h1 class="prof-hdr">Assignments</h1>
+            <div class="link-cont">
+                <a href="" class="links">Assignment1</a>
+                <a href="" class="links">Assignment2</a>
+                <a href="" class="links">Assignment3</a>
+                <a href="" class="links">Assignment4</a>
+            </div>
+        </section>
+        <section class="chart-cont">
+            <h1 class="prof-hdr">Overall Stats</h1>
+            <div>
+                <div id="chartdiv" class="chartdiv"></div>
+            </div>
+
+        </section>
+        <section class="chart-cont">
+            <h1 class="prof-hdr">Attendance Stats</h1>
+            <div>
+                <div id="attendancechart" class="chartdiv"></div>
+            </div>
+
+        </section>
+    </section>
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/dataviz.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <!-- Chart code -->
+    <script>
+        am4core.ready(function() {
+
+            // Themes begin
+            am4core.useTheme(am4themes_dataviz);
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+
+            // Create chart instance
+            var chart = am4core.create("chartdiv", am4charts.PieChart);
+
+            // Add and configure Series
+            var pieSeries = chart.series.push(new am4charts.PieSeries());
+            pieSeries.dataFields.value = "litres";
+            pieSeries.dataFields.category = "country";
+
+            // Let's cut a hole in our Pie chart the size of 30% the radius
+            chart.innerRadius = am4core.percent(30);
+
+            // Put a thick white border around each Slice
+            pieSeries.slices.template.stroke = am4core.color("#fff");
+            pieSeries.slices.template.strokeWidth = 2;
+            pieSeries.slices.template.strokeOpacity = 1;
+            pieSeries.slices.template
+                // change the cursor on hover to make it apparent the object can be interacted with
+                .cursorOverStyle = [{
+                    "property": "cursor",
+                    "value": "pointer"
+                }];
+
+            pieSeries.alignLabels = false;
+            pieSeries.labels.template.bent = true;
+            pieSeries.labels.template.radius = 3;
+            pieSeries.labels.template.padding(0, 0, 0, 0);
+
+            pieSeries.ticks.template.disabled = true;
+
+            // Create a base filter effect (as if it's not there) for the hover to return to
+            var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+            shadow.opacity = 0;
+
+            // Create hover state
+            var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+
+            // Slightly shift the shadow and make it more prominent on hover
+            var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+            hoverShadow.opacity = 0.7;
+            hoverShadow.blur = 5;
+
+            // Add a legend
+            //chart.legend = new am4charts.Legend();
+            chart.data = [{
+                country: "Marks",
+                litres: 30
+            }, {
+                country: "attendance",
+                litres: 30
+            }, {
+                country: "sports",
+                litres: 10
+            }];
+
+        }); // end am4core.ready()
+    </script>
+    <script>
+        am4core.ready(function() {
+
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+
+            // Themes end
+
+            // Create chart instance
+            var chart = am4core.create("attendancechart", am4charts.PieChart);
+
+            // Add and configure Series
+            var pieSeries = chart.series.push(new am4charts.PieSeries());
+            pieSeries.dataFields.value = "litres";
+            pieSeries.dataFields.category = "country";
+
+            // Let's cut a hole in our Pie chart the size of 30% the radius
+            chart.innerRadius = am4core.percent(30);
+
+            // Put a thick white border around each Slice
+            pieSeries.slices.template.stroke = am4core.color("#fff");
+            pieSeries.slices.template.strokeWidth = 2;
+            pieSeries.slices.template.strokeOpacity = 1;
+            pieSeries.slices.template
+                // change the cursor on hover to make it apparent the object can be interacted with
+                .cursorOverStyle = [{
+                    "property": "cursor",
+                    "value": "pointer"
+                }];
+
+            pieSeries.alignLabels = false;
+            pieSeries.labels.template.bent = true;
+            pieSeries.labels.template.radius = 3;
+            pieSeries.labels.template.padding(0, 0, 0, 0);
+
+            pieSeries.ticks.template.disabled = true;
+
+            // Create a base filter effect (as if it's not there) for the hover to return to
+            var shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter);
+            shadow.opacity = 0;
+
+            // Create hover state
+            var hoverState = pieSeries.slices.template.states.getKey("hover"); // normally we have to create the hover state, in this case it already exists
+
+            // Slightly shift the shadow and make it more prominent on hover
+            var hoverShadow = hoverState.filters.push(new am4core.DropShadowFilter);
+            hoverShadow.opacity = 0.7;
+            hoverShadow.blur = 5;
+
+            // Add a legend
+            //chart.legend = new am4charts.Legend();
+            chart.data = [{
+                country: "Present",
+                litres: 72
+            }, {
+                country: "Absent",
+                litres: 28
+            }];
+
+        }); // end am4core.ready()
+    </script>
 </body>
 
 </html>
