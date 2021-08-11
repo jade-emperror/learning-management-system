@@ -9,6 +9,44 @@
     <title></title>
 </head>
 <body>
-    
+    <section class="topbar">
+        <h1 class="lms-hdr" >LMS</h1>
+        <div class="searchbar-cont">
+            <div class="container h-100">
+                <div class="d-flex justify-content-center h-100">
+                    <form action="/search/" method="POST" class="searchbar">
+                        {% csrf_token %}
+                        <input class="search_input" type="text" autocomplete="off" name="searchq" placeholder="Search...">
+                        <button type="submit" class="search_icon"><img class="icon" src="{% static '/images/search.svg' %}"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <a href="/shop/" class="tab-links">Shop</a>
+            <a href="https://coe1.annauniv.edu/home/" class="tab-links">Result</a>
+            <a href="" class="tab-links">Course</a>
+            <!--<a href="" class="tab-links">Settings <img src="/images/down-arrow.png" class="arrow-icon"></a>
+            -->
+            <div class="dropdown">
+                <button class="dropbtn">Settings</button>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Attendance</a>
+                    <a href="logout/">Log Out</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="result-cont">
+        {% for i in weblinks %}
+        <div class="result-tab">
+            <a href= {{ i.link }} class="result-link">{{ i.title }}</a>
+            <p class="result-desc">{{ i.snippet }}</p>
+        </div>
+        {% endfor %}
+    </section>
 </body>
 </html>

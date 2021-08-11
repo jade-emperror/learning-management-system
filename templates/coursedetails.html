@@ -1,0 +1,75 @@
+<!DOCTYPE html>{% load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Roboto&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/search.css' %}">
+    <link rel="stylesheet" href="{% static '/css/coursedetails.css' %}">
+
+    <title>Dashboard-LMS</title>
+</head>
+
+<body>
+    <section class="topbar">
+        <h1 class="lms-hdr">LMS</h1>
+        <div class="searchbar-cont">
+            <div class="container h-100">
+                <div class="d-flex justify-content-center h-100">
+                    <form action="search/" method="POST" class="searchbar">
+                        {% csrf_token %}
+                        <input class="search_input" type="text" autocomplete="off" name="searchq" placeholder="Search...">
+                        <button type="submit" class="search_icon"><img class="icon" src="{% static '/images/search.svg' %}"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="tabs">
+            <a href="/shop/" class="tab-links">Shop</a>
+            <a href="https://coe1.annauniv.edu/home/" class="tab-links">Result</a>
+            <a href="/dashboard/course/" class="tab-links">Course</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Settings</button>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Attendance</a>
+                    <a href="logout/">Log Out</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="dynamicdata">
+    <div class="sub-headers">
+        <span class="subcode">{{subjectdetails.subcode}}</span>
+        <span class="subtitle">{{subjectdetails.title}}</span>
+    </div>
+        <div class="qform">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <select name="unit_no" id="unit_no">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input type="submit" class="btn" value="go">
+            </form>
+        </div>
+        <div class="result-zone">
+        <div class="rform">
+            <span class="uname">{{unit}}.{{subjectdetails.unitname}}</span><br>
+            <div class="tag-container">
+                {% for tag,link in keys_tags.items %}
+            <a href="{{link}}" class="tag">{{tag}} +</a>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

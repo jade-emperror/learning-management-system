@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus Feed - LMS</title>
+</head>
+
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <select name="dept" id="dept">
+            <option value="IT">IT</option>
+            <option value="BT">BT</option>
+            <option value="EEE">EEE</option>
+            <option value="ECE">ECE</option>
+            <option value="CSE">CSE</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+        </select>
+        <select name="sem" id="sem">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">5</option>
+            <option value="7">5</option>
+            <option value="8">5</option>
+
+        </select>
+        <input type="text" id="subcode1" placeholder="subcode1" name="subcode1" maxlength="9">
+        <input type="text" id="subcode2" placeholder="subcode2" name="subcode2" maxlength="9">
+        <input type="text" id="subcode3" placeholder="subcode3" name="subcode3" maxlength="9">
+        <input type="text" id="subcode4" placeholder="subcode4" name="subcode4" maxlength="9">
+        <input type="text" id="subcode5" placeholder="subcode5" name="subcode5" maxlength="9">
+        <input type="text" id="subcode6" placeholder="subcode6" name="subcode6" maxlength="9">
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>
